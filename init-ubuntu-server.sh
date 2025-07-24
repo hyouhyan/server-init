@@ -43,4 +43,4 @@ sudo sysctl -p /etc/sysctl.d/99-vpn.conf
 
 
 ## cronによる自動アップグレード
-echo "0 0,12 * * * /usr/bin/apt update; /usr/bin/apt dist-upgrade -y > /dev/null 2>&1" | sudo crontab -
+sudo crontab -l; echo "0 0,12 * * * /usr/bin/apt update; /usr/bin/apt dist-upgrade -y > /dev/null 2>&1" | sudo crontab -
