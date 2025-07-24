@@ -3,7 +3,7 @@
 ## 日本語化
 
 # 日本語パッケージにインストール
-apt -y install language-pack-ja-base language-pack-ja ibus-kk
+apt -y install language-pack-ja-base language-pack-ja
 
 # デフォルトの言語変更
 localectl set-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
