@@ -41,6 +41,8 @@ echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-vpn.conf
 echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-vpn.conf
 sudo sysctl -p /etc/sysctl.d/99-vpn.conf
 
+# Tailscaleのインストール(if necessary)
+# curl -fsSL https://tailscale.com/install.sh | sh
 
 ## cronによる自動アップグレード
 sudo crontab -l; echo "0 0,12 * * * /usr/bin/apt update; /usr/bin/apt dist-upgrade -y > /dev/null 2>&1" | sudo crontab -
