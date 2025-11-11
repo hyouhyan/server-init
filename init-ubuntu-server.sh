@@ -3,13 +3,13 @@
 # 日本語化
 
 ## 日本語パッケージにインストール
-apt -y install language-pack-ja-base language-pack-ja
+sudo apt -y install language-pack-ja-base language-pack-ja
 
 ## デフォルトの言語変更
-localectl set-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
+sudo localectl set-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
 
 ## タイムゾーンの変更
-timedatectl set-timezone Asia/Tokyo
+sudo timedatectl set-timezone Asia/Tokyo
 
 
 # Dockerのインストール
@@ -25,10 +25,10 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt update
 
 ## Dockerのインストール
-apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ## sudoなしでDockerを動かせるようにする
 sudo usermod -aG docker $(echo $USER)
