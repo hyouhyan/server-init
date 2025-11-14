@@ -12,42 +12,33 @@ CURL_COMMAND="curl -fsSL"
 ## パッケージアップデート
 sudo apt update
 
+## OS に応じたスクリプトを実行する関数
+run_init_script() {
+    local script_name="$1"
+
+    case "$ID" in
+        ubuntu|debian)
+            $CURL_COMMAND "${BASE_URL}/${ID}/${script_name}" | sh
+            ;;
+        *)
+            echo "unsupported: $ID"
+            return 1
+            ;;
+    esac
+}
+
 
 # 日本語化
-if [ "$ID" = "ubuntu" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-jp.sh" | sh
-elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/debian/init-jp.sh" | sh
-else
-    echo "unsupported: $ID"
-fi
+run_init_script "init-jp.sh"
 
 
 # Dockerのインストール
-if [ "$ID" = "ubuntu" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-docker.sh" | sh
-elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/debian/init-docker.sh" | sh
-else
-    echo "unsupported: $ID"
-fi
+run_init_script "init-docker.sh"
 
 
 # VPN用設定
-if [ "$ID" = "ubuntu" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-vpn.sh" | sh
-elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/debian/init-vpn.sh" | sh
-else
-    echo "unsupported: $ID"
-fi
+run_init_script "init-vpn.sh"
 
 
 # サーバ保守関係
-if [ "$ID" = "ubuntu" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-autoupdate.sh" | sh
-elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/debian/init-autoupdate.sh" | sh
-else
-    echo "unsupported: $ID"
-fi
+run_init_script "init-autoupdate.sh"
