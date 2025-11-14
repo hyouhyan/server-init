@@ -56,6 +56,10 @@ sudo sysctl -p /etc/sysctl.d/99-vpn.conf
 # curl -fsSL https://tailscale.com/install.sh | sh
 
 
-
 # サーバ保守関係
-run_init_script "init-autoupdate.sh"
+
+## unattended-upgradesをインストール
+sudo apt install -y unattended-upgrades
+
+## unattended-upgradesを有効化
+sudo cp /usr/share/unattended-upgrades/20auto-upgrades /etc/apt/apt.conf.d/
