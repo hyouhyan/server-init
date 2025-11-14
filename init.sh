@@ -30,20 +30,31 @@ run_init_script() {
 
 # 日本語化
 run_init_script "init-jp.sh"
+
 ## タイムゾーンの変更
 sudo timedatectl set-timezone Asia/Tokyo
 
 
 # Dockerのインストール
 run_init_script "init-docker.sh"
+
 ## Dockerのインストール
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 ## sudoなしでDockerを動かせるようにする
 sudo usermod -aG docker $(echo $USER)
 
 
 # VPN用設定
-run_init_script "init-vpn.sh"
+
+## フォワーディングの許可
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-vpn.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-vpn.conf
+sudo sysctl -p /etc/sysctl.d/99-vpn.conf
+
+## Tailscaleのインストール(if necessary)
+# curl -fsSL https://tailscale.com/install.sh | sh
+
 
 
 # サーバ保守関係
