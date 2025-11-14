@@ -53,8 +53,8 @@ sudo sysctl -p /etc/sysctl.d/99-vpn.conf
 # サーバ保守関係
 
 ## unattended-upgradesによる自動アップグレード
-apt update
-apt install -y unattended-upgrades
+sudo apt update
+sudo apt install -y unattended-upgrades
 
 ### デフォの設定をコピーして適用
-cp /usr/share/unattended-upgrades/20auto-upgrades /etc/apt/apt.conf.d/
+sudo cp /usr/share/unattended-upgrades/20auto-upgrades /etc/apt/apt.conf.d/
