@@ -30,6 +30,8 @@ run_init_script() {
 
 # 日本語化
 run_init_script "init-jp.sh"
+## タイムゾーンの変更
+sudo timedatectl set-timezone Asia/Tokyo
 
 
 # Dockerのインストール

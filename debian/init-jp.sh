@@ -9,4 +9,3 @@ sudo locale-gen
 
 ## デフォルトの言語変更
 sudo update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
-sudo timedatectl set-timezone Asia/Tokyo
