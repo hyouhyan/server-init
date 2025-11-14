@@ -1,12 +1,5 @@
 #!/bin/bash
 
-####################
-## Ubuntu Serverでの使用を想定
-## 以下の呪文をコピペで楽に実行できるよ
-## curl -fsSL https://gist.githubusercontent.com/hyouhyan/fed5f55c461e105642272c33e7519550/raw | sh
-####################
-
-
 # 下準備
 
 ## パッケージアップデート
