@@ -6,6 +6,13 @@
 ## curl -fsSL https://gist.githubusercontent.com/hyouhyan/fed5f55c461e105642272c33e7519550/raw | sh
 ####################
 
+
+# 下準備
+
+## パッケージアップデート
+sudo apt update
+
+
 # 日本語化
 
 ## 日本語パッケージにインストール
@@ -20,7 +27,6 @@ sudo timedatectl set-timezone Asia/Tokyo
 
 # Dockerのインストール
 ## Add Docker's official GPG key:
-sudo apt update
 sudo apt install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -50,10 +56,10 @@ sudo sysctl -p /etc/sysctl.d/99-vpn.conf
 ## Tailscaleのインストール(if necessary)
 # curl -fsSL https://tailscale.com/install.sh | sh
 
+
 # サーバ保守関係
 
 ## unattended-upgradesによる自動アップグレード
-sudo apt update
 sudo apt install -y unattended-upgrades
 
 ### デフォの設定をコピーして適用
