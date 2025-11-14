@@ -17,7 +17,7 @@ sudo apt update
 if [ "$ID" = "ubuntu" ]; then
     $CURL_COMMAND "${BASE_URL}/ubuntu/init-jp.sh" | sh
 elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-jp.sh" | sh
+    $CURL_COMMAND "${BASE_URL}/debian/init-jp.sh" | sh
 else
     echo "unsupported: $ID"
 fi
@@ -27,7 +27,7 @@ fi
 if [ "$ID" = "ubuntu" ]; then
     $CURL_COMMAND "${BASE_URL}/ubuntu/init-docker.sh" | sh
 elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-docker.sh" | sh
+    $CURL_COMMAND "${BASE_URL}/debian/init-docker.sh" | sh
 else
     echo "unsupported: $ID"
 fi
@@ -37,7 +37,7 @@ fi
 if [ "$ID" = "ubuntu" ]; then
     $CURL_COMMAND "${BASE_URL}/ubuntu/init-vpn.sh" | sh
 elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-vpn.sh" | sh
+    $CURL_COMMAND "${BASE_URL}/debian/init-vpn.sh" | sh
 else
     echo "unsupported: $ID"
 fi
@@ -47,7 +47,7 @@ fi
 if [ "$ID" = "ubuntu" ]; then
     $CURL_COMMAND "${BASE_URL}/ubuntu/init-autoupdate.sh" | sh
 elif [ "$ID" = "debian" ]; then
-    $CURL_COMMAND "${BASE_URL}/ubuntu/init-autoupdate.sh" | sh
+    $CURL_COMMAND "${BASE_URL}/debian/init-autoupdate.sh" | sh
 else
     echo "unsupported: $ID"
 fi
