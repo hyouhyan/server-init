@@ -15,9 +15,3 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
-
-## Dockerのインストール
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-## sudoなしでDockerを動かせるようにする
-sudo usermod -aG docker $(echo $USER)

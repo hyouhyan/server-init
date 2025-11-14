@@ -11,9 +11,3 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
-
-## Dockerのインストール
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-## sudoなしでDockerを動かせるようにする
-sudo usermod -aG docker $(echo $USER)

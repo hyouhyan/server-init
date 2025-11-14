@@ -36,6 +36,10 @@ sudo timedatectl set-timezone Asia/Tokyo
 
 # Dockerのインストール
 run_init_script "init-docker.sh"
+## Dockerのインストール
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+## sudoなしでDockerを動かせるようにする
+sudo usermod -aG docker $(echo $USER)
 
 
 # VPN用設定
