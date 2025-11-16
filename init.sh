@@ -36,6 +36,11 @@ sudo timedatectl set-timezone Asia/Tokyo
 
 
 # Dockerのインストール
+
+## Uninstall old versions
+sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-doc podman-docker containerd runc | cut -f1)
+
+## aptソースの登録
 run_init_script "init-docker.sh"
 
 ## Dockerのインストール
