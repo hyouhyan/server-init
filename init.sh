@@ -75,3 +75,9 @@ sudo apt install -y prometheus-node-exporter
 
 ## node exporterの自動起動
 sudo systemctl enable prometheus-node-exporter
+
+
+# LEDをオフにする(ラズパイのみ)
+if [ "$ID" = "debian" ]; then
+    run_init_script "init-raspi-led-off.sh"
+fi
