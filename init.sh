@@ -68,3 +68,9 @@ sudo apt install -y unattended-upgrades
 
 ## unattended-upgradesを有効化
 sudo cp /usr/share/unattended-upgrades/20auto-upgrades /etc/apt/apt.conf.d/
+
+## Prometheus用node exporter
+sudo apt install -y node-exporter
+
+## node exporterの自動起動
+sudo systemctl enable node-exporter
