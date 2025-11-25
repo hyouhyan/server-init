@@ -10,7 +10,7 @@ CURL_COMMAND="curl -fsSL"
 . /etc/os-release
 
 ## パッケージアップデート
-sudo apt update
+sudo apt-get update
 
 ## OS に応じたスクリプトを実行する関数
 run_init_script() {
@@ -44,7 +44,7 @@ sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-doc podm
 run_init_script "init-docker.sh"
 
 ## Dockerのインストール
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get -q install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ## sudoなしでDockerを動かせるようにする
 sudo usermod -aG docker $(echo $USER)
@@ -64,13 +64,13 @@ curl -fsSL https://tailscale.com/install.sh | sh
 # サーバ保守関係
 
 ## unattended-upgradesをインストール
-sudo apt install -y unattended-upgrades
+sudo apt-get -q install -y unattended-upgrades
 
 ## unattended-upgradesを有効化
 sudo cp /usr/share/unattended-upgrades/20auto-upgrades /etc/apt/apt.conf.d/
 
 ## Prometheus用node exporter
-sudo apt install -y prometheus-node-exporter
+sudo apt-get -q install -y prometheus-node-exporter
 
 
 ## node exporterの自動起動

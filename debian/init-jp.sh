@@ -1,7 +1,7 @@
 # 日本語化
 
 ## 日本語フォントとロケールのインストール
-sudo apt install -y fonts-noto-cjk locales
+sudo apt-get -q install -y fonts-noto-cjk locales
 
 ## ロケールの生成
 sudo sed -i 's/# ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' /etc/locale.gen
