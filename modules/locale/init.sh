@@ -15,7 +15,7 @@ case "$ID" in
         ;;
     *)
         echo "Unsupported OS: $ID"
-        return 1
+        exit 1
         ;;
 esac
 
