@@ -10,5 +10,5 @@ curl -fsSL https://hyouhyan.com/init.sh | sh
 ```
 
 ```
-https://raw.githubusercontent.com/hyouhyan/server-init/refs/heads/main/init.sh | sh
+curl -fsSL https://raw.githubusercontent.com/hyouhyan/server-init/refs/heads/main/init.sh | sh
 ```
