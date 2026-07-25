@@ -7,6 +7,7 @@ BASE_URL="https://raw.githubusercontent.com/hyouhyan/server-init/refs/heads/main
 export BASE_URL
 
 . /etc/os-release
+export ID VERSION_CODENAME UBUNTU_CODENAME
 
 ## Check OS support
 case "$ID" in
