@@ -13,3 +13,6 @@ sudo apt-get -q install -y prometheus-node-exporter
 
 ## node exporterの自動起動設定
 sudo systemctl enable prometheus-node-exporter
+
+## Lynisのインストール（セキュリティ監査ツール、実行は `sudo lynis audit system`）
+sudo apt-get -q install -y lynis
