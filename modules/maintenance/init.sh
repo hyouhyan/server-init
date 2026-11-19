@@ -2,6 +2,11 @@
 
 # サーバ保守設定モジュール
 
+## カーネルパニック時に10秒後に自動再起動する
+## （デフォルトの kernel.panic=0 だとパニックで停止したままになり、現地復旧が必要になる）
+echo 'kernel.panic = 10' | sudo tee /etc/sysctl.d/99-kernel-panic.conf > /dev/null
+sudo sysctl -p /etc/sysctl.d/99-kernel-panic.conf > /dev/null
+
 ## unattended-upgradesのインストール
 sudo apt-get -q install -y unattended-upgrades
 
